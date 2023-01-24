@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution1(s) {
+      let answer = "";
+      for (x of s) {
+        x === 'A' ? answer += '#' : answer += x;
+
+      }
+      return answer;
+    }
+
+    // replace(), 정규식 활용
+    function solution2(s) {
+      let answer = s;
+      answer = answer.replace(/A/g, '#');
+      return answer;
+    }
+
+    let str = "BANANA";
+    console.log(solution1(str));
+    console.log(solution2(str));
+  </script>
+</body>

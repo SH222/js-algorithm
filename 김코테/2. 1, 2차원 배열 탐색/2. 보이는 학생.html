@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    // 바로 앞사람과 비교하는 코드
+    // 바로 앞 사람이랑만 비교하면 안된다고 함
+    // 앞앞사람이 더 크다면? ㅇㅇ
+    function solution(arr) {
+      let answer = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < max) answer++;
+      }
+      return answer;
+    }
+
+    // 수정
+    function solution2(arr) {
+      let answer = 1, max = arr[0];
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+          answer++;
+          max = arr[i];
+        }
+      }
+      return answer;
+    }
+
+    let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+    console.log(solution2(arr));
+  </script>
+</body>
+
+</html>

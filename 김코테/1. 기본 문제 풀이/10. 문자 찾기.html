@@ -1,0 +1,30 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution1(s, t) {
+      let count = 0;
+      for (let x of s) {
+        if (x === t) count++;
+      }
+      return count;
+    }
+
+    // split() 사용
+    function solution2(s, t) {
+      let count = s.split(t).length - 1; // t를 구분자로 사용
+      return count;
+    }
+
+    let str = "COMPUTERPROGRAMMING";
+    console.log(solution1(str, 'R'));
+    console.log(solution2(str, 'O'));
+  </script>
+</body>
+
+</html>

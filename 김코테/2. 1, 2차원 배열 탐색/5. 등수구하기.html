@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(arr) {
+      let n = arr.length;
+      let answer = Array.from({ length: n }, () => 1); // arr 길이만큼의 배열 생성, 각 값을 1로 초기화
+      // console.log("answer", answer); // [1, 1, 1, 1, 1]
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+          if (arr[i] < arr[j]) answer[i]++;
+        }
+      }
+      return answer;
+    }
+
+    let arr = [87, 89, 92, 100, 76];
+    let arr2 = [87, 87, 92, 76, 76];
+    let arr3 = [87, 100, 92, 100, 100];
+    console.log(solution(arr));
+    console.log(solution(arr2));
+    console.log(solution(arr3));
+  </script>
+</body>
+
+</html>

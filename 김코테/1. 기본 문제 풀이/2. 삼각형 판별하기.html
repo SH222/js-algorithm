@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    // 짧은 막대 길이의 합이 큰 막대 길이보다 커야 삼각형이 가능
+    function solution(a, b, c) {
+      let sum = a + b + c;
+      let maxNum = Math.max(a, b, c);
+      return sum - maxNum > 1 ? "NO" : "YES";
+      // 전체 더한 값에서 가장 큰 값을 빼면 됨, 뺀 값이 1보다 크면 삼각형 가능
+    }
+
+    console.log(solution(6, 7, 11));
+  </script>
+</body>
+
+</html>
