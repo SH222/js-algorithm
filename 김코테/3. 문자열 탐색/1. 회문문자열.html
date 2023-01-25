@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 회문문자열
+            // 앞으로 읽으나 뒤로 읽으나 같은 문자열
+
+            // 문자열이 회문문자열인지 확인 후 yes or no 출력
+            // 대소문자 구분 x
+
+            // for문
+            // 길이/2 까지만 돌면 됨
+            function solution(s){
+                let answer="YES";
+                s=s.toLowerCase();
+                for(let i = 0; i<Math.floor(s.length/2); i++) {
+                    if(s[i] !== s[s.length-(i+1)]) return "NO";
+                }
+                return answer;
+            }
+            let str="goooG";
+            // console.log(solution(str));
+
+            // split(), reverse()
+            // 뒤집은 문자열 만들어서 같은지 비교하면 끝
+            function solution2(s){
+                s = s.toLowerCase();
+                return s.split("").reverse().join("")===s ? "YES" : "NO";
+            }
+            
+            let str2="fffdddfff";
+            console.log(solution2(str2));
+        </script>
+    </body>
+</html>
+

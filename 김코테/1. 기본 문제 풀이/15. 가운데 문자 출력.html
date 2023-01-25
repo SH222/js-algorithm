@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let mid = Math.floor(s.length/2);
+                if(s.length%2===1) answer = s.substr(mid, 1); 
+                else answer = s.substr(mid-1, 2);
+                return answer;
+            }
+            console.log(solution("study"));
+            console.log(solution("good"));
+
+
+            // substring()과 substr()의 차이 
+            // : 둘 다 매개변수가 두 개 필요하나 서로 다름
+            // substring(가져오려는 문자의 인덱스값 시작부분, 여기 인덱스값 전까지 출력)
+            // substr(가져오려는 문자의 인덱스값 시작부분, 시작부분부터 몇개)
+        </script>
+    </body>
+</html> 

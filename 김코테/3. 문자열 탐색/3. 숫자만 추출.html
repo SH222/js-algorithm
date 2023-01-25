@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            // 내 풀이
+            // function solution(str){
+            //     str = str.toLowerCase();
+            //     return str.replace(/[^0-9]/g, '');
+            // }
+            
+            function solution(str){
+                str = str.toLowerCase();
+                // 출력 시 맨 앞에 0 없애려면 parseInt
+                return parseInt(str.replace(/[^0-9]/g, ''));
+            }
+
+            // parseInt() 쓰지 않고 Number()
+            function solution2(str){
+                str = str.toLowerCase();
+                // 출력 시 맨 앞에 0 없애려면 parseInt
+                return Number(str.replace(/[^0-9]/g, ''));
+            }
+            
+            let str="g0en2T0s8eSoft";
+            
+            console.log(solution(str));
+            console.log(solution2("g0en2T0s8eSoft"));
+        </script>
+    </body>
+</html>

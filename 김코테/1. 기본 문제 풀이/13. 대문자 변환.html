@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){         
+                let answer = "";
+                for (let x of s) x===x.toUpperCase() ? answer += x.toLowerCase() :answer += x.toUpperCase();                
+                return answer;
+            }
+
+            let str="ItisTimeToStudy";
+            let str2 = "StuDY";
+            console.log(solution(str));
+            console.log(solution(str2));
+        </script>
+    </body>
+</html>
