@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(n, arr) {
+      let answer, max = Number.MIN_SAFE_INTEGER;
+      // max는 가장 작은 숫자로 초기화 해야 첫번째 숫자가 max로 들어감
+      for (let x of arr) {
+        let sum = 0, tmp = x; // 원본 x는 건드리면 안되기 때문에 임시 변수 선언해서 tmp의 x를 조작
+        // tmp%10을 반복문으로 돌려주면 각 자릿수의 합을 구할 수 있음
+        // 완료 시 break
+        while (tmp) {
+          sum += (tmp % 10);
+          tmp = Math.floor(tmp / 10); // tmp를 나머지 한 몫으로 변경
+        }
+        if (sum > max) {
+          max = sum;
+          answer = x; // 답은 tmp가 아닌 원본으로, tmp로 만들어서 사용하지 않으면 여긴 0이 될 수 있음
+        } else if (sum === max) {
+          if (x > answer) answer = x;
+        }
+      }
+      return answer;
+    }
+
+
+    // 내장함수 사용 
+    function solution2(n, arr) {
+      let answer, max = Number.MIN_SAFE_INTEGER;
+      for (let x of arr) {
+        // toString한 상태로 그냥 reduce하면 더해지지 않고 문자가 합쳐짐
+        let sum = x.toString().split("").reduce((a, b) => a + Number(b), 0);
+        if (sum > max) {
+          max = sum;
+          answer = x;
+        } else if (sum === max) {
+          if (x > answer) answer = x;
+        }
+      }
+      return answer;
+    }
+    let arr = [128, 460, 603, 40, 521, 137, 123];
+    // console.log(solution(7, arr));
+    console.log(solution2(7, arr));
+  </script>
+</body>
